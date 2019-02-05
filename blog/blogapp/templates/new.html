@@ -42,17 +42,17 @@
     </div>
   </nav>
 
-  {% for blog in blogs.all %}
-  </br>
-    <div class="container">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">{{blog.title}}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">{{blog.pub_date}}</h6>
-          <p class="card-text">{{blog.summary}}</p>
-          <a href="{%url 'detail' blog.id%}" class="card-link">...more</a>
-        </div>
-      </div>
-    </div>
-  {% endfor %}
+  <div class="container">
+    <form action = "{%url 'create'%}">
+      <h4>제목 : </h4>
+      <input typt = "text" name = "title">
+      </br>
+      </br>
+      <h4>본문 : </h4>
+      <textarea cols = 40 rows = 10 name ="body"></textarea>
+      </br>
+      </br>
+      <input class = "btn btn-dark" type = "submit" value = "제출하기">
+    </form>
+  </div>
 </body>
